@@ -31,6 +31,7 @@
         android:layout_below="@id/outputView"
         android:layout_margin="3dp"
         android:layout_toEndOf="@id/butC"
+        android:onClick="btnPress"
         android:text="@string/butPlusMinus" />
 
     <Button
@@ -62,6 +63,7 @@
         android:layout_below="@id/butSplit"
         android:layout_alignParentLeft="true"
         android:layout_margin="3dp"
+        android:onClick="btnPress"
         android:text="@string/but7" />
 
     <Button
@@ -71,6 +73,7 @@
         android:layout_below="@id/butSplit"
         android:layout_margin="3dp"
         android:layout_toEndOf="@id/but7"
+        android:onClick="btnPress"
         android:text="@string/but8" />
 
     <Button
@@ -80,6 +83,7 @@
         android:layout_below="@id/butSplit"
         android:layout_margin="3dp"
         android:layout_toEndOf="@id/but8"
+        android:onClick="btnPress"
         android:text="@string/but9" />
 
     <Button
@@ -93,6 +97,7 @@
         android:layout_marginEnd="3dp"
         android:layout_marginBottom="3dp"
         android:layout_toEndOf="@id/but9"
+        android:onClick="btnPress"
         android:text="@string/butMult" />
 
     <Button
@@ -102,6 +107,7 @@
         android:layout_below="@id/but7"
         android:layout_alignParentLeft="true"
         android:layout_margin="3dp"
+        android:onClick="btnPress"
         android:text="@string/but4" />
 
     <Button
@@ -111,6 +117,7 @@
         android:layout_below="@id/but7"
         android:layout_margin="3dp"
         android:layout_toEndOf="@id/but4"
+        android:onClick="btnPress"
         android:text="@string/but5" />
 
     <Button
@@ -120,6 +127,7 @@
         android:layout_below="@id/but7"
         android:layout_margin="3dp"
         android:layout_toEndOf="@id/but5"
+        android:onClick="btnPress"
         android:text="@string/but6" />
 
     <Button
@@ -142,6 +150,7 @@
         android:layout_below="@id/but4"
         android:layout_alignParentLeft="true"
         android:layout_margin="3dp"
+        android:onClick="btnPress"
         android:text="@string/but1" />
 
     <Button
@@ -151,6 +160,7 @@
         android:layout_below="@id/but4"
         android:layout_margin="3dp"
         android:layout_toEndOf="@id/but1"
+        android:onClick="btnPress"
         android:text="@string/but2" />
 
     <Button
@@ -160,6 +170,7 @@
         android:layout_below="@id/but4"
         android:layout_margin="3dp"
         android:layout_toEndOf="@id/but2"
+        android:onClick="btnPress"
         android:text="@string/but3" />
 
     <Button
@@ -184,6 +195,7 @@
         android:layout_alignRight="@id/but2"
         android:layout_alignParentLeft="true"
         android:layout_margin="3dp"
+        android:onClick="btnPress"
         android:text="@string/but0" />
 
     <Button
@@ -193,6 +205,7 @@
         android:layout_below="@id/but1"
         android:layout_margin="3dp"
         android:layout_toEndOf="@id/but2"
+        android:onClick="btnPress"
         android:text="@string/butDot" />
 
     <Button

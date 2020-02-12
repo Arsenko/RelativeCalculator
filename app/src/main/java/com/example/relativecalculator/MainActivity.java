@@ -6,12 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView outputText;
     Button butC,butPlus,butMinus,butPercent,butMult,butSplit,butEqual,butPlusMinus;
     double tempDigit;
-    short optionSelected=-1;
+    final String PLUS="plus";
+    final String MINUS="minus";
+    final String PERCENT="percent";
+    final String MULTIPLEX="multiplex";
+    final String SPLIT="split";
+    String optionSelected="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 tempDigit=Double.valueOf(outputText.getText().toString());
                 outputText.setText("");
-                optionSelected=0;
+                optionSelected=PLUS;
             }
         });
 
@@ -52,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 tempDigit=Double.valueOf(outputText.getText().toString());
                 outputText.setText("");
-                optionSelected=1;
+                optionSelected=MINUS;
             }
         });
 
@@ -61,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 tempDigit=Double.valueOf(outputText.getText().toString());
                 outputText.setText("");
-                optionSelected=2;
+                optionSelected=PERCENT;
             }
         });
 
@@ -70,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 tempDigit=Double.valueOf(outputText.getText().toString());
                 outputText.setText("");
-                optionSelected=3;
+                optionSelected=MULTIPLEX;
             }
         });
 
@@ -79,34 +85,39 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 tempDigit=Double.valueOf(outputText.getText().toString());
                 outputText.setText("");
-                optionSelected=4;
+                optionSelected=SPLIT;
             }
         });
 
         butEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(optionSelected!=-1) {
+                if(!optionSelected.equals("")) {
                     double secondDigit = Double.valueOf(outputText.getText().toString());
                     switch (optionSelected) {
-                        case 0: {
+                        case PLUS: {
                             outputText.setText(String.valueOf(tempDigit +secondDigit));
                             break;
                         }
-                        case 1: {
+                        case MINUS: {
                             outputText.setText(String.valueOf(tempDigit -secondDigit));
                             break;
                         }
-                        case 2: {
+                        case PERCENT: {
                             outputText.setText(String.valueOf(tempDigit / 100 *secondDigit));
                             break;
                         }
-                        case 3: {
+                        case MULTIPLEX: {
                             outputText.setText(String.valueOf(tempDigit * secondDigit));
                             break;
                         }
-                        case 4: {
-                            outputText.setText(String.valueOf(tempDigit / secondDigit));
+                        case SPLIT: {
+                            if(secondDigit==0){
+                                Toast.makeText(MainActivity.this,
+                                        "Error, zero split unposible",Toast.LENGTH_LONG).show();
+                            }else {
+                                outputText.setText(String.valueOf(tempDigit / secondDigit));
+                            }
                             break;
                         }
                     }
@@ -116,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         butC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                optionSelected=-1;
+                optionSelected="";
                 outputText.setText("");
             }
         });

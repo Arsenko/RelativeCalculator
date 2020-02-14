@@ -205,7 +205,6 @@
         android:layout_below="@id/but1"
         android:layout_margin="3dp"
         android:layout_toEndOf="@id/but2"
-        android:onClick="btnPress"
         android:text="@string/butDot" />
 
     <Button

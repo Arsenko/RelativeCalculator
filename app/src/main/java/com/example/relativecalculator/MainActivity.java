@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView outputText;
-    Button butC,butPlus,butMinus,butPercent,butMult,butSplit,butEqual,butPlusMinus;
+    Button butDot,butC,butPlus,butMinus,butPercent,butMult,butSplit,butEqual,butPlusMinus;
     double tempDigit;
     final String PLUS="plus";
     final String MINUS="minus";
@@ -35,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
         butEqual=findViewById(R.id.butEqual);
         butPercent=findViewById(R.id.butPercent);
         butPlusMinus=findViewById(R.id.butPlusMinus);
+        butDot=findViewById(R.id.butDot);
+
+        butDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!outputText.getText().toString().contains(".")){
+                    btnPress(v);
+                }else{
+                    Toast.makeText(MainActivity.this,"Dot already exist",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         butPlusMinus.setOnClickListener(new View.OnClickListener() {
             @Override
